@@ -13,8 +13,8 @@ DECLARE
           AND table_type = 'BASE TABLE';
 BEGIN
     FOR record IN table_cursor DO
-        EXECUTE IMMEDIATE 'INSERT OVERWRITE INTO analytics.marts.' || record.table_name ||
-            ' SELECT * FROM analytics.staging.' || record.table_name;
+        EXECUTE IMMEDIATE 'INSERT OVERWRITE INTO sproc_analytics.marts.' || record.table_name ||
+            ' SELECT * FROM sproc_analytics.staging.' || record.table_name;
         table_count := table_count + 1;
     END FOR;
 

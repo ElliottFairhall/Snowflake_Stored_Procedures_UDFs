@@ -100,7 +100,7 @@ def run(session, source_table: str, target_table: str) -> str:
 $$;
 
 -- Call the procedure
-CALL merge_customer_data('RAW.STAGING.CUSTOMERS', 'ANALYTICS.MARTS.DIM_CUSTOMERS');
+CALL merge_customer_data('SPROC_RAW.STAGING.CUSTOMERS', 'SPROC_ANALYTICS.MARTS.DIM_CUSTOMERS');
 ```
 
 ### 🐍 Python UDFs
@@ -169,8 +169,8 @@ DECLARE
           AND table_type = 'BASE TABLE';
 BEGIN
     FOR record IN table_cursor DO
-        EXECUTE IMMEDIATE 'INSERT OVERWRITE INTO analytics.marts.' || record.table_name ||
-            ' SELECT * FROM analytics.staging.' || record.table_name;
+        EXECUTE IMMEDIATE 'INSERT OVERWRITE INTO sproc_analytics.marts.' || record.table_name ||
+            ' SELECT * FROM sproc_analytics.staging.' || record.table_name;
         table_count := table_count + 1;
     END FOR;
 

@@ -1,5 +1,7 @@
 # 🚀 Snowflake Stored Procedures & UDFs
 
+> Architecture and design rationale: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+
 [![Snowflake](https://img.shields.io/badge/Snowflake-Cloud%20Data%20Platform-29B5E8?style=flat&logo=snowflake)](https://www.snowflake.com/)
 [![SQL & Python](https://img.shields.io/badge/Language-SQL%20%7C%20Python-orange)](https://docs.snowflake.com/)
 [![Status](https://img.shields.io/badge/Status-Educational-success)](https://github.com/ElliottFairhall/Snowflake_Stored_Procedures_UDFs)
